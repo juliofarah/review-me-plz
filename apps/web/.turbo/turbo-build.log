@@ -1,0 +1,29 @@
+$ next build
+- info Creating an optimized production build...
+- info Compiled successfully
+- info Linting and checking validity of types...
+- error ESLint: Failed to load config "@rvmplz/eslint-config" to extend from. Referenced from: /Users/juliofarah/dev/review-me-plz/apps/web/.eslintrc.js
+- info Collecting page data...
+- info Generating static pages (0/3)
+- info Generating static pages (3/3)
+- info Finalizing page optimization...
+
+Route (app)                                Size     First Load JS
+─ ○ /                                      0 B                0 B
++ First Load JS shared by all              93.7 kB
+  ├ chunks/366-511f2e4553227d59.js         16.1 kB
+  ├ chunks/676-187257d4348fb020.js         25.2 kB
+  ├ chunks/7d8153d6-99c79e8db739952f.js    50.5 kB
+  ├ chunks/main-app-62a7f4df81b4c75c.js    213 B
+  └ chunks/webpack-7d8696a60916d3a1.js     1.73 kB
+
+Route (pages)                              Size     First Load JS
+─ ○ /404                                   181 B          74.8 kB
++ First Load JS shared by all              74.7 kB
+  ├ chunks/framework-0857c1c24dbfb1d6.js   45 kB
+  ├ chunks/main-ec6b66e9c718517f.js        27.7 kB
+  ├ chunks/pages/_app-98cbc3e51a53b395.js  194 B
+  └ chunks/webpack-7d8696a60916d3a1.js     1.73 kB
+
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
