@@ -1,0 +1,19 @@
+  version: '3.9'
+
+  services:
+    db:
+      image: mysql:latest
+      platform: linux/x86_64 # comment if not on M1 machines
+      environment:
+        MYSQL_DATABASE: 'rvmplz'
+        MYSQL_PASSWORD: 'root'
+        MYSQL_ROOT_PASSWORD: 'root'
+      ports:
+        - '3306:3306'
+      hostname: rvmplz-mysql
+      container_name: rvmplz-mysql
+      healthcheck:
+        test: '/usr/bin/mysql --user=root --password=root --execute "SHOW DATABASES;"'
+        interval: 10s
+        timeout: 30s
+        retries: 30

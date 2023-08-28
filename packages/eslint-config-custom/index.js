@@ -1,0 +1,40 @@
+module.exports = {
+  extends: [
+    "next",
+    "turbo",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+  ],
+  rules: {
+    "@next/next/no-html-link-for-pages": "off",
+    "no-console": [
+      "error",
+      { allow: ["warn", "error", "timeEnd", "time", "timeLog"] },
+    ],
+    "no-debugger": "error",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react/display-name": "off",
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/no-children-prop": "warn",
+    "@typescript-eslint/no-empty-interface": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/no-this-alias": "warn",
+    "react/no-unknown-property": "warn",
+  },
+  plugins: ["@typescript-eslint"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    babelOptions: {
+      presets: [require.resolve("next/babel")],
+    },
+  },
+};

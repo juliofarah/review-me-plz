@@ -1,0 +1,43 @@
+{
+  "name": "@rvmplz/server",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "private": true,
+  "scripts": {
+    "start": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register ./dist/src/api/index.js",
+    "dev": "tsx watch src/api/index.ts",
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "4.15.0",
+    "@trpc/server": "^10.30.0",
+    "cors": "2.8.5",
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "serialize-error": "11.0.0",
+    "superjson": "1.12.3",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.13",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.4",
+    "@types/passport": "^1.0.12",
+    "@types/passport-jwt": "^3.0.9",
+    "concurrently": "^7.2.2",
+    "eslint": "^8.39.0",
+    "eslint-config-custom": "*",
+    "prisma": "^4.14.0",
+    "tsconfig": "*",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "3.12.7",
+    "typescript": "5.0.4",
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "^0.32.0"
+  }
+}
