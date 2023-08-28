@@ -9,9 +9,16 @@
     "dev": "tsx watch src/api/index.ts",
     "clean": "rm -rf dist",
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+        "db:generate": "yarn prisma generate",
+    "db:push": "yarn prisma db push --skip-generate",
+    "db:migrate": "yarn prisma migrate dev",
+    "db:reset": "yarn prisma migrate reset",
+    "db:seed": "ts-node prisma/seed/seed.ts",
+    "db:studio": "yarn prisma studio"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.12.3",
     "@prisma/client": "4.15.0",
     "@trpc/server": "^10.30.0",
     "cors": "2.8.5",

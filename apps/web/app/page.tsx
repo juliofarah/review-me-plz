@@ -1,6 +1,7 @@
 "use client";
 import { Button, Header } from "ui";
 import { trpc } from "../utils/_trpcClient";
+import { UserButton } from "@clerk/nextjs"
 
 export default function Page() {
   const data = trpc.example.list.useQuery();
@@ -13,6 +14,8 @@ export default function Page() {
           {i.id} - {i.name}
         </div>
       ))}
+            <UserButton afterSignOutUrl="/"/>
+
       <Button />
     </>
   );

@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs"
 import { Providers } from "./providers";
 import { Figtree } from "next/font/google";
 
@@ -13,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${figtree.variable} h-full`}>
-      <body className="h-full overflow-hidden bg-white font-figtree">
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${figtree.variable} h-full`}>
+        <body className="h-full overflow-hidden bg-white font-figtree">
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

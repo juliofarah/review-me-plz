@@ -9,17 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.23.3",
+    "@rvmplz/eslint-config-custom": "*",
+    "@rvmplz/tailwind-config": "*",
+    "@tanstack/react-query": "4.29.14",
+    "@trpc/client": "10.30.0",
+    "@trpc/react-query": "10.30.0",
+    "@trpc/server": "10.31.0",
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*",
-    "@rvmplz/eslint-config-custom": "*",
-    "@rvmplz/tailwind-config": "*",
     "tailwindcss": "3.3.2",
-    "@trpc/react-query": "10.30.0",
-    "@trpc/client": "10.30.0",
-    "@trpc/server": "10.31.0",
-    "@tanstack/react-query": "4.29.14"
+    "ui": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
