@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "dotenv -- turbo run dev --filter=@ts-template/web --filter=@ts-template/server",
+    "dev": "dotenv -- turbo run dev --filter=@rvmplz/web --filter=@rvmplz/server",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

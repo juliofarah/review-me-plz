@@ -1,5 +1,5 @@
 {
-  "extends": "@ts-template/tsconfig/nextjs.json",
+  "extends": "@rvmplz/tsconfig/nextjs.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },

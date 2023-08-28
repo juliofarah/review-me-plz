@@ -1,5 +1,5 @@
 {
-  "extends": "@ts-template/tsconfig/base.json",
+  "extends": "@rvmplz/tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "lib": ["dom", "esnext", "es2021.String", "es2018"],

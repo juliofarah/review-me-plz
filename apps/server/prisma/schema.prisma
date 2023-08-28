@@ -12,3 +12,8 @@ model Example {
   id             String   @id @default(cuid()) @db.VarChar(32)
   name           String   @unique
 }
+
+model User {
+  id             String   @id @default(cuid()) @db.VarChar(32)
+  email          String   @unique
+}

@@ -1,5 +1,5 @@
 {
-  "name": "@ts-template/eslint-config-custom",
+  "name": "@rvmplz/eslint-config-custom",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
