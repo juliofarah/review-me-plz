@@ -18,6 +18,10 @@ async function main() {
     res.send("OK");
   });
 
+  app.post('/oauth', (req, res) => {
+    console.log(req)
+  })
+
   app.use(
     "/api",
     cors(),

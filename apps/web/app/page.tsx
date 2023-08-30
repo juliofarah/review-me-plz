@@ -14,8 +14,7 @@ export default function Page() {
           {i.id} - {i.name}
         </div>
       ))}
-            <UserButton afterSignOutUrl="/"/>
-
+      <UserButton afterSignOutUrl="/"/>
       <Button />
     </>
   );
