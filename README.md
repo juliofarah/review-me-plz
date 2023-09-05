@@ -25,7 +25,6 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 - [TRPC](https://trpc.io/) for API calls
 - [PrismaJS](https://www.prisma.io/) for ORM
 - [Zod](https://zod.dev/) for runtime type validation
-- [Figtree](https://fonts.google.com/specimen/Figtree) because it's so beautiful
 
 ### Build
 

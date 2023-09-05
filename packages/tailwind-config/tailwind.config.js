@@ -8,9 +8,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        figtree: ["var(--font-figtree)"],
-      },
       borderRadius: {
         "4xl": "2rem",
       },
