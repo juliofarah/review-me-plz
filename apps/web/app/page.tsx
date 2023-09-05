@@ -11,11 +11,7 @@ import { Button, Header } from 'ui';
 export default function Page(props) {
   const {
     isLoaded,
-    createOrganization,
-    setActive,
-    userInvitations,
     userMemberships,
-    userSuggestions,
   } = useOrganizationList();
 
   const router = useRouter();

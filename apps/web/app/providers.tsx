@@ -8,7 +8,6 @@ import { useAuth } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { trpc } from '../utils/_trpcClient';
 import { isTRPCError } from '../utils/errors';
-import { Toaster } from './components/toaster';
 
 export function Providers({ children }: { children: ReactNode }) {
   const auth = useAuth();
@@ -74,7 +73,6 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <Toaster />
         {children}
       </QueryClientProvider>
     </trpc.Provider>
