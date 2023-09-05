@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-        "db:generate": "yarn prisma generate",
+    "db:generate": "yarn prisma generate",
     "db:push": "yarn prisma db push --skip-generate",
     "db:migrate": "yarn prisma migrate dev",
     "db:reset": "yarn prisma migrate reset",
