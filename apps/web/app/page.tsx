@@ -3,6 +3,7 @@ import {
   useOrganization,
   useOrganizationList
 } from '@clerk/nextjs'
+import Head from 'next/head'
 import { useRouter } from 'next/navigation'
 
 export default function Page(props) {
@@ -22,6 +23,8 @@ export default function Page(props) {
   }
 
   return (
-    <p className="text-red-600">Hello!</p>
+      <div className="w-full h-full flex flex-col items-center justify-center">
+        <p className="text-red-600">Hello!</p>
+      </div>
   );
 }
