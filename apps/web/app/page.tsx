@@ -1,12 +1,9 @@
 'use client';
 import {
-  OrganizationSwitcher,
-  UserButton,
   useOrganization,
-  useOrganizationList,
-} from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
-import { Button, Header } from 'ui';
+  useOrganizationList
+} from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
 
 export default function Page(props) {
   const {
@@ -25,11 +22,6 @@ export default function Page(props) {
   }
 
   return (
-    <>
-      <Header text="Web" />
-      <OrganizationSwitcher />
-      <UserButton afterSignOutUrl="/" />
-      <Button />
-    </>
+    <p className="text-red-600">Hello!</p>
   );
 }
