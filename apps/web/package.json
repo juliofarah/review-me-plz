@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-toast": "1.1.4",
+    "class-variance-authority": "0.7.0",
+    "framer-motion": "10.16.2",
     "@clerk/nextjs": "^4.23.3",
-    "@rvmplz/eslint-config-custom": "*",
+    "@rvmplz/eslint-config": "*",
     "@rvmplz/tailwind-config": "*",
     "@tanstack/react-query": "4.29.14",
     "@trpc/client": "10.30.0",
     "@trpc/react-query": "10.30.0",
     "@trpc/server": "10.31.0",
+    "react-feather": "2.0.10",
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

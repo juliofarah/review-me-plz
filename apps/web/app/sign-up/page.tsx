@@ -1,5 +1,6 @@
-import { SignUp } from "@clerk/nextjs";
- 
+import { SignUp } from '@clerk/nextjs';
+
 export default function Page() {
-  return <SignUp />;
+  const redirect = process.env.NEXT_PUBLIC_API_HOST + '/oauth';
+  return <SignUp redirectUrl={redirect} />;
 }

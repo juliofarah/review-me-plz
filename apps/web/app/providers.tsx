@@ -1,20 +1,18 @@
-"use client";
+'use client';
 
-import {
-  MutationCache,
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-import superjson from "superjson";
-import { ReactNode, useMemo } from "react";
-import { trpc } from "../utils/_trpcClient";
-import { useRouter } from "next/navigation";
-import { httpBatchLink, loggerLink } from "@trpc/client";
+import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactNode, useMemo } from 'react';
+import superjson from 'superjson';
+import { httpBatchLink, loggerLink } from '@trpc/client';
+import { useAuth } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
+import { trpc } from '../utils/_trpcClient';
+import { isTRPCError } from '../utils/errors';
+import { Toaster } from './components/toaster';
 
 export function Providers({ children }: { children: ReactNode }) {
+  const auth = useAuth();
   const router = useRouter();
-
   const queryClient = useMemo(
     () =>
       new QueryClient({
@@ -22,21 +20,28 @@ export function Providers({ children }: { children: ReactNode }) {
           queries: {
             useErrorBoundary: true,
             retry(failureCount, err) {
-              if (process.env.NODE_ENV === "development") console.error(err);
+              // @ts-expect-error this is a trpc error
+              if (isTRPCError(err) && err.data?.code === 'UNAUTHORIZED') {
+                return false;
+              }
               return failureCount < 3;
             },
           },
         },
         queryCache: new QueryCache({
           onError(err) {
-            console.error(err);
-            router.refresh();
+            // @ts-expect-error this is a trpc error
+            if (isTRPCError(err) && err.data?.code === 'UNAUTHORIZED') {
+              router.refresh();
+            }
           },
         }),
         mutationCache: new MutationCache({
           onError(err) {
-            console.error(err);
-            router.refresh();
+            // @ts-expect-error this is a trpc error
+            if (isTRPCError(err) && err.data?.code === 'UNAUTHORIZED') {
+              router.refresh();
+            }
           },
         }),
       }),
@@ -49,10 +54,15 @@ export function Providers({ children }: { children: ReactNode }) {
       trpc.createClient({
         links: [
           loggerLink({
-            enabled: (opts) => process.env.NODE_ENV === "development",
+            enabled: opts => process.env.NODE_ENV === 'development' && opts.direction === 'down',
           }),
           httpBatchLink({
             url: `${process.env.NEXT_PUBLIC_API_HOST}/api`,
+            headers: async () => {
+              return {
+                Authorization: `Bearer ${await auth.getToken()}`,
+              };
+            },
           }),
         ],
         transformer: superjson,
@@ -63,7 +73,10 @@ export function Providers({ children }: { children: ReactNode }) {
 
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <Toaster />
+        {children}
+      </QueryClientProvider>
     </trpc.Provider>
   );
 }

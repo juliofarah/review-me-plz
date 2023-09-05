@@ -1,18 +1,14 @@
-import { ClerkProvider } from "@clerk/nextjs"
-import { Providers } from "./providers";
-import { Figtree } from "next/font/google";
+import { ClerkProvider } from '@clerk/nextjs';
+import { Figtree } from 'next/font/google';
+import { Providers } from './providers';
 
 const figtree = Figtree({
-  subsets: ["latin"],
-  variable: "--font-figtree",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-figtree',
+  display: 'swap',
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en" className={`${figtree.variable} h-full`}>
