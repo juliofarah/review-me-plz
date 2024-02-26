@@ -1,0 +1,8 @@
+Debugger listening on ws://127.0.0.1:49776/bf69f5e0-8327-4cae-8072-83a4b7d78c33
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+$ npx eslint -c ./packages/eslint-config/index.js
+Debugger listening on ws://127.0.0.1:49803/e5af94a3-04e7-485d-adfb-2016186c03c2
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+Waiting for the debugger to disconnect...

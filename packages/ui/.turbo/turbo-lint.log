@@ -1,0 +1,24 @@
+Debugger listening on ws://127.0.0.1:49777/42fed33d-d49f-40dc-ac56-4dc980cede9a
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+$ eslint "**/*.ts*"
+Debugger listening on ws://127.0.0.1:49805/7861e3c4-e278-4838-a29d-1e151757c993
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+
+Oops! Something went wrong! :(
+
+ESLint: 7.32.0
+
+ESLint couldn't find a configuration file. To set up a configuration file for this project, please run:
+
+    eslint --init
+
+ESLint looked for configuration files in /Users/juliofarah/dev/review-me-plz/packages/ui and its ancestors. If it found none, it then looked in your home directory.
+
+If you think you already have a configuration file or if you need more help, please stop by the ESLint chat room: https://eslint.org/chat/help
+
+Waiting for the debugger to disconnect...
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 2.
+Waiting for the debugger to disconnect...
